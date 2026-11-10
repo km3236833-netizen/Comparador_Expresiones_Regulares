@@ -1,0 +1,171 @@
+
+/* ==========================================
+   ESTILOS GENERALES
+========================================== */
+
+body {
+    background-color: #f3f4f8;
+    font-family: Arial, sans-serif;
+    color: #25253a;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.encabezado {
+    background: linear-gradient(135deg, #641b35, #a52a4d);
+    color: white;
+    padding: 35px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-weight: bold;
+}
+
+.encabezado p {
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   PANELES
+========================================== */
+
+.panel {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   ETIQUETAS
+========================================== */
+
+.form-label {
+    font-weight: bold;
+    color: #641b35;
+}
+
+
+/* ==========================================
+   CAMPOS DE ENTRADA
+========================================== */
+
+.form-control {
+    border-radius: 9px;
+    padding: 12px;
+    border: 1px solid #d6d6df;
+}
+
+.form-control:focus {
+    border-color: #8d3150;
+    box-shadow: 0 0 0 0.2rem rgba(141, 49, 80, 0.15);
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn-comparar {
+    background-color: #7c2342;
+    color: white;
+    border: none;
+}
+
+.btn-comparar:hover {
+    background-color: #57162e;
+    color: white;
+}
+
+.btn-limpiar {
+    background-color: #e7e7ed;
+    color: #333;
+    border: none;
+}
+
+.btn-limpiar:hover {
+    background-color: #d5d5df;
+}
+
+
+/* ==========================================
+   RESULTADOS
+========================================== */
+
+.resultado-panel {
+    border-left: 5px solid #198754;
+}
+
+.numero-resultado {
+    font-size: 35px;
+    font-weight: bold;
+    color: #198754;
+}
+
+
+/* ==========================================
+   COINCIDENCIAS RESALTADAS
+========================================== */
+
+mark {
+    background-color: #ffe08a;
+    color: #5b3510;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.texto-resultado {
+    background-color: #f5f5f8;
+    border-radius: 10px;
+    padding: 18px;
+    line-height: 2;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+
+
+/* ==========================================
+   DISEÑO RESPONSIVO
+========================================== */
+
+@media (max-width: 576px) {
+
+    .encabezado {
+        padding: 25px 15px;
+    }
+
+    .encabezado h1 {
+        font-size: 24px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+}

@@ -1,19 +1,161 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./public/img/favico.png" type="image/x-icon">
-    <title>Examen Unidad 4</title>
-</head>
+    <meta name="description" content="Comparador de expresiones regulares con JavaScript">
+    <title>Comparador de Expresiones Regulares</title>
+<script defer src="bundle.js"></script></head>
+
 <body>
+
     <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col text-center">
-                <h1 class="text-danger">Plantilla Examen Unidad 4</h1>
+
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+
+            <h1>
+                <i class="fa-solid fa-code"></i>
+                Comparador de Expresiones Regulares
+            </h1>
+
+            <p>
+                Analiza textos y encuentra coincidencias
+                utilizando expresiones regulares.
+            </p>
+
+        </header>
+
+        <!-- FORMULARIO PRINCIPAL -->
+        <main class="panel">
+
+            <h4 class="mb-4">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Analizador de texto
+            </h4>
+
+            <!-- INPUT DE EXPRESIÓN REGULAR -->
+            <div class="mb-4">
+
+                <label for="expresion" class="form-label">
+                    <i class="fa-solid fa-code"></i>
+                    Expresión regular (ER)
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="expresion"
+                    placeholder="Ejemplo: Java\w*"
+                >
+
+                <small class="text-muted">
+                    Escribe el patrón que deseas buscar.
+                </small>
+
             </div>
-        </div>
-    </div>    
-    <script src="./bundle.js"></script>
+
+            <!-- INPUT DE TEXTO -->
+            <div class="mb-4">
+
+                <label for="texto" class="form-label">
+                    <i class="fa-solid fa-align-left"></i>
+                    Texto para analizar
+                </label>
+
+                <textarea
+                    class="form-control"
+                    id="texto"
+                    rows="7"
+                    placeholder="Escribe o pega aquí el texto que deseas analizar..."
+                ></textarea>
+
+            </div>
+
+            <!-- BOTONES -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+                <button
+                    type="button"
+                    id="btnComparar"
+                    class="btn btn-comparar px-4"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Comparar
+
+                </button>
+
+                <button
+                    type="button"
+                    id="btnLimpiar"
+                    class="btn btn-limpiar px-4"
+                >
+
+                    <i class="fa-solid fa-broom"></i>
+                    Limpiar
+
+                </button>
+
+            </div>
+
+        </main>
+
+        <!-- RESULTADOS -->
+        <section
+            id="resultado"
+            class="panel resultado-panel d-none"
+        >
+
+            <h4>
+                <i class="fa-solid fa-chart-column"></i>
+                Resultado de la comparación
+            </h4>
+
+            <div class="mt-3">
+
+                <p class="mb-1">
+                    Coincidencias encontradas:
+                </p>
+
+                <div
+                    id="cantidad"
+                    class="numero-resultado"
+                >
+                    0
+                </div>
+
+            </div>
+
+            <hr>
+
+            <h5>
+                Texto con coincidencias resaltadas:
+            </h5>
+
+            <div
+                id="coincidencias"
+                class="texto-resultado"
+            ></div>
+
+        </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer>
+
+            <p>
+                Proyecto académico | Comparador ER
+                <br>
+                Desarrollado con JavaScript ECMAScript,
+                Webpack y Babel.
+            </p>
+
+        </footer>
+
+    </div>
+
 </body>
+
 </html>

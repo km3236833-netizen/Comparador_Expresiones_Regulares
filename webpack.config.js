@@ -1,42 +1,61 @@
+
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Modo desarrollo
-  entry: './src/index.js', // Archivo de entrada
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js', // Archivo de salida
-  },
-  devServer: {
-    static: './dist', // Carpeta donde lanzara los archivos
-    port: 3000, // Puerto del servidor de desarrollo
-    open: true, // Abre el navegador automáticamente
-    hot: true, // Habilita recarga en vivo
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/, // Archivos JS
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      },
-      {
-        test: /\.scss$/, // Procesar archivos SCSS de Bootstrap
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.css$/, // Procesar archivos CSS
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf|svg)$/, // Carga fuentes de FontAwesome
-        type: 'asset/resource',
-      }
-    ]
-  }
+    // Archivo principal de entrada
+    entry: './src/js/index.js',
+
+    // Configuración de salida
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        clean: true
+    },
+
+    // Configuración de procesamiento de archivos
+    module: {
+        rules: [
+            {
+                // Identificar archivos JavaScript
+                test: /\.js$/,
+
+                // Excluir las dependencias
+                exclude: /node_modules/,
+
+                // Procesar JavaScript mediante Babel
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
+                // Identificar archivos CSS
+                test: /\.css$/i,
+
+                // Procesar los estilos
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+
+    // Plugins
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html'
+        })
+    ],
+
+    // Configuración del servidor
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist')
+        },
+        port: 8080,
+        open: true,
+        hot: true
+    },
+
+    // Modo de desarrollo
+    mode: 'development'
 };
